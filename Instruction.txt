@@ -1,0 +1,26 @@
+Step 1-
+Download the Kubernetes folder having all the files
+Vagrantfile.
+Kube-installations
+kube-master.
+Deploy in kubernetes
+
+Download and install Vm box and vagrant in your local machine
+
+Open the folder kubernetes
+type cmd
+make sure you are inside the folder
+Type vagrant up
+It will create one master node and two worker node in your vm box, It will take some time
+
+Using putty login in to the worker and master nodes with their ip address given in the vagrant file
+
+In both the worker and master nodes copy the kube-installations file which will download - docker,kubelet,kubeadm,kubectl
+
+To make aware of the master node type the command given in the kube-master.
+
+For deployement -
+Follow the command given im the - Deploy in kubernetes
+
+
+For running the document in AWS , follow the AWS file

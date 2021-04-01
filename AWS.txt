@@ -1,0 +1,39 @@
+ 
+To create a K8s cluster in EKS you need to do following steps:
+1) Setup or preparation steps
+ - create AWS account
+ - create a VPC - virtual private space
+ - create an IAM role with Security Group 
+2) Create Cluster Control Plane - Master Nodes
+ - choose basic information like cluster name and k8s version
+ - choose region and VPC for your cluster
+ - set security
+3) Create two Worker Nodes and connect to cluster
+The Worker Nodes are some EC2 instances with CPU and storage resources.
+ - Create as a Node Group
+ - Choose cluster it will attach to
+ - Define Security Group, select instance type
+or 
+
+
+Install eksctl
+brew tap weaveworks/tap
+
+brew install weaveworks/tap/eksctl
+
+It will install all dependendies
+
+check if it is install or not
+eksctl version
+
+eksctl need to authenticate with AWS
+Creating a cluster in Amazon Eks
+
+eksctl create cluster \
+--name test-cluster \
+--version 1.17 \
+--region eu-central-1 \
+--nodegroup-name work-nodes \
+--node-type t2.micro
+--nodes 2
+

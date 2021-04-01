@@ -1,0 +1,26 @@
+Lab setup-:
+k8smaster- 192.167.10.70- kubernetes Master Node
+k8snode1-  192.167.10.71- kubernetes Worker Node1
+k8snode2-  192.167.10.72- kubernetes Worker Node2
+
+Step1:- Run below command to create a Deployment
+#kubectl run myweb --image=nginx --replicas=1 --port=80
+
+Step2:- Run below command to check the status of created deployment
+#kubectl get deployment
+
+Step3:- Run below command to check the status of pods
+#kubectl get pod
+
+
+Step 4:- Login to worker nodes and use curl command to ensure pods are accessible
+#curl <pod IP address>:80
+
+Step 5:- Create a Service to expose the port to outside the deployment
+#kubectl expose deployment myweb --port=8080 --target-port=80 --type=LoadBalancer
+
+Step 6:-Check the status of service
+#kubectl get svc
+
+Step 7: On the internet type <Ip address of worker node::Port number> 
+Application has been deployed
